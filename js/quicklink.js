@@ -2,12 +2,12 @@
 //     quicklink();
 // });
 
-$(window).on('load', function () {
-    quicklink();
-});
+(function ($){
+	$(window).on('load', function () {
+	    quicklink();
+	});
 
-
-
-$(document).ajaxSuccess(function() {
-    quicklink(); 
-});
+	$(document).ajaxSuccess(function() {
+	    quicklink(); 
+	});
+})(jQuery);
