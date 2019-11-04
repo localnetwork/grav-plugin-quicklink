@@ -10,4 +10,4 @@
 	$(document).ajaxSuccess(function() {
 	    quicklink(); 
 	});
-})(jQuery);
+});
