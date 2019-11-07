@@ -23,10 +23,6 @@ Quicklink attempts to make navigations to subsequent pages load faster. It:
 
 The **Quicklink** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Faster subsequent page-loads by prefetching in-viewport links during idle time
 
-
-## Requirements
-- Jquery
-
 ## Installation
 
 Installing the Quicklink plugin can be done in one of three ways: The GPM (Grav Package Manager) installation method lets you quickly install the plugin with a simple terminal command, the manual method lets you do so via a zip file, and the admin method lets you do so via the Admin Plugin.
