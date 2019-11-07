@@ -50,7 +50,7 @@ class QuicklinkPlugin extends Plugin
     {
         $twig   = $this->grav['twig'];
         $config = $this->config->toArray();
-        $this->grav['assets']->addJs("plugin://quicklink/assets/quicklink/dist/quicklink.umd.js", ['group' => 'bottom', 'priority' => '100']);
+        $this->grav['assets']->addJs("plugin://quicklink/assets/quicklink/quicklink.umd.js", ['group' => 'bottom', 'priority' => '100']);
         $this->grav['assets']->addJs("plugin://quicklink/js/quicklink.js", ['group' => 'bottom', 'priority' => '100']);
     }
 }
