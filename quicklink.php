@@ -41,6 +41,7 @@ class QuicklinkPlugin extends Plugin
         $this->enable([
             'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
         ]);
+        
     } 
     
     /**
@@ -48,9 +49,19 @@ class QuicklinkPlugin extends Plugin
      */
     public function onTwigSiteVariables()
     {
-        $twig   = $this->grav['twig'];
+        $twig   = $this->grav['twig']; 
         $config = $this->config->toArray();
-        $this->grav['assets']->addJs("plugin://quicklink/assets/quicklink/quicklink.umd.js", ['group' => 'bottom', 'priority' => '100']);
-        $this->grav['assets']->addJs("plugin://quicklink/js/quicklink.js", ['group' => 'bottom', 'priority' => '100']);
+        $loggedInToggle = $config['plugins']['quicklink']['loggedin'];
+        $loggedIn = $this->grav['user']['access']['site']['login'];
+        $enabled = $config['plugins']['quicklink']['enabled'];
+        
+        if($enabled == true && $loggedInToggle == 1 && $loggedIn == true) { 
+            // DO NOT LOAD ASSETS
+        }else {  
+            // LOAD ASSETS
+            $this->grav['assets']->addJs("plugin://quicklink/assets/quicklink/quicklink.umd.js", ['group' => 'bottom', 'priority' => '100']);
+            $this->grav['assets']->addJs("plugin://quicklink/js/quicklink.js", ['group' => 'bottom', 'priority' => '100']);
+        }
+        
     }
 }
